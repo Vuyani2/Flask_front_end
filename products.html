@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/4668171386.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles/products.css" />
+    <title>Buy your product</title>
+  </head>
+  <body>
+    <button class="cards"><i class="fas fa-shopping-cart"></i></button>
+    <section id="cart">
+      <h2 class="title">Items</h2>
+      <ul id="items" class="list-group">
+        <li class="list-group-item">
+          Item 1
+          <button class="btn btn-danger btn-sm float-right delete">X</button>
+        </li>
+        <li class="list-group-item">
+          Item 2
+          <button class="btn btn-danger btn-sm float-right delete">X</button>
+        </li>
+        <li class="list-group-item">
+          Item 3
+          <button class="btn btn-danger btn-sm float-right delete">X</button>
+        </li>
+        <li class="list-group-item">
+          Item 4
+          <button class="btn btn-danger btn-sm float-right delete">X</button>
+        </li>
+      </ul>
+    </section>
+    <section id="portfolio">
+      <div>
+        <h1 class="card-container-heading color">Our Products</h1>
+        <div class="button-container">
+          <button onclick="filterCards('All')">All Products</button>
+          <button onclick="filterCards('Personal')">Personal Computers</button>
+          <button onclick="filterCards('Desktop')">Desktop Computers</button>
+          <button onclick="filterCards('Phones')">Phones</button>
+          <button onclick="filterCards('Tablets')">Tablets</button>
+        </div>
+        <div class="products"></div>
+      </div>
+    </section>
+
+    <script src="./JS/cards.js"></script>
+  </body>
+</html>
