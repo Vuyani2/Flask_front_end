@@ -11,27 +11,65 @@
     <title>Buy your product</title>
   </head>
   <body>
+    <button class="profile"><i class="fas fa-user"></i></button>
     <button class="cards"><i class="fas fa-shopping-cart"></i></button>
+    <section id="profile">
+      <div class="prof_link">
+        <a href="">Profile Management</a>
+        <a href="">Add products</a>
+        <a href="">Edit product</a>
+        <a href="">Remove product</a>
+      </div>
+    </section>
     <section id="cart">
-      <h2 class="title">Items</h2>
-      <ul id="items" class="list-group">
-        <li class="list-group-item">
-          Item 1
-          <button class="btn btn-danger btn-sm float-right delete">X</button>
-        </li>
-        <li class="list-group-item">
-          Item 2
-          <button class="btn btn-danger btn-sm float-right delete">X</button>
-        </li>
-        <li class="list-group-item">
-          Item 3
-          <button class="btn btn-danger btn-sm float-right delete">X</button>
-        </li>
-        <li class="list-group-item">
-          Item 4
-          <button class="btn btn-danger btn-sm float-right delete">X</button>
-        </li>
-      </ul>
+      <h2 class="title">Cart</h2>
+      <div>
+        <ul id="items" class="list-group">
+          <li class="list-group-item">
+            <div class="itm">Item 1</div>
+            <div class="price">R20</div>
+            <div class="dlt">
+              <button class="btn btn-danger btn-sm float-right delete">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="itm">Item 1</div>
+            <div class="price">R20</div>
+            <div class="dlt">
+              <button class="btn btn-danger btn-sm float-right delete">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="itm">Item 1</div>
+            <div class="price">R20</div>
+            <div class="dlt">
+              <button class="btn btn-danger btn-sm float-right delete">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="itm">Item 1</div>
+            <div class="price">R20</div>
+            <div class="dlt">
+              <button class="btn btn-danger btn-sm float-right delete">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="calc">
+        <div>TOTAL PRICE</div>
+        <div>R00,00</div>
+      </div>
+      <div class="check">
+        <button class="checkout">Check Out</button>
+      </div>
     </section>
     <section id="portfolio">
       <div>

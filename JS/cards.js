@@ -143,3 +143,10 @@ let blob = document.querySelector("#cart");
 card_button.addEventListener("click", () => {
   blob.classList.toggle("active");
 });
+
+let profile_button = document.querySelector(".profile");
+let blog = document.querySelector("#profile");
+
+profile_button.addEventListener("click", () => {
+  blog.classList.toggle("active");
+});
