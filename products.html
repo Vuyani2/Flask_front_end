@@ -12,7 +12,9 @@
   </head>
   <body>
     <button class="profile"><i class="fas fa-user"></i></button>
-    <button class="cards"><i class="fas fa-shopping-cart"></i></button>
+    <button onclick="showCart()" class="cards">
+      <i class="fas fa-shopping-cart"></i>
+    </button>
     <section id="profile">
       <div class="prof_link">
         <a href="">Profile Management</a>
@@ -24,44 +26,7 @@
     <section id="cart">
       <h2 class="title">Cart</h2>
       <div>
-        <ul id="items" class="list-group">
-          <li class="list-group-item">
-            <div class="itm">Item 1</div>
-            <div class="price">R20</div>
-            <div class="dlt">
-              <button class="btn btn-danger btn-sm float-right delete">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="itm">Item 1</div>
-            <div class="price">R20</div>
-            <div class="dlt">
-              <button class="btn btn-danger btn-sm float-right delete">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="itm">Item 1</div>
-            <div class="price">R20</div>
-            <div class="dlt">
-              <button class="btn btn-danger btn-sm float-right delete">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="itm">Item 1</div>
-            <div class="price">R20</div>
-            <div class="dlt">
-              <button class="btn btn-danger btn-sm float-right delete">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-            </div>
-          </li>
-        </ul>
+        <ul id="items" class="list-group"></ul>
       </div>
       <div class="calc">
         <div>TOTAL PRICE</div>
@@ -88,3 +53,40 @@
     <script src="./JS/cards.js"></script>
   </body>
 </html>
+
+<!-- <li class="list-group-item">
+            <div class="itm">Item 1</div>
+            <div class="price">R20</div>
+            <div class="dlt">
+              <button class="btn btn-danger btn-sm float-right delete">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="itm">Item 1</div>
+            <div class="price">R20</div>
+            <div class="dlt">
+              <button class="btn btn-danger btn-sm float-right delete">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="itm">Item 1</div>
+            <div class="price">R20</div>
+            <div class="dlt">
+              <button class="btn btn-danger btn-sm float-right delete">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="itm">Item 1</div>
+            <div class="price">R20</div>
+            <div class="dlt">
+              <button class="btn btn-danger btn-sm float-right delete">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          </li> -->

@@ -114,7 +114,7 @@ body {
   font-size: 40px;
 }
 
-.card {
+.product-item {
   width: 48%;
   margin: 1%;
   min-width: 300px;
@@ -129,15 +129,15 @@ body {
   padding: 1%;
 }
 
-.card-img {
-  height: 100%;
+.product-item img {
+  height: 350px;
   object-fit: cover;
   width: 100%;
   border-radius: 5px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
-.card-details {
+.product-details {
   padding: 20px;
   display: flex;
   flex-direction: column;
