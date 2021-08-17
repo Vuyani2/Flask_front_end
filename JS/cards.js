@@ -86,6 +86,8 @@ function addToCart(id) {
     });
 }
 
+function deleteFromCart(id) {}
+
 function renderCards() {
   let productContainer = document.querySelector(".products");
   for (product of products) {
