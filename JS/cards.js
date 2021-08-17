@@ -1,84 +1,5 @@
-// let products = [
-//   {
-//     imgURL: "https://picsum.photos/300?random=1",
-//     imgALT: "Product 1",
-//     name: "Glassmorphic Form",
-//     techStack: "HTML/CSS",
-//     price: "123",
-//     description: "Styled form using Formspree and Glassmorphism.com",
-//     addToCart: "https://github.com/Vuyani2/boilerplate",
-//     buyNow: "https://hopeful-bassi-6437ef.netlify.app",
-//     obj: "item1",
-//   },
-//   {
-//     imgURL: "https://picsum.photos/300?random=2",
-//     imgALT: "Product 2",
-//     name: "My Timeline",
-//     techStack: "HTML/CSS",
-//     price: "123",
-//     description: "My Timeline using animation and Glassmorphism.com",
-//     addToCart: "https://github.com/Vuyani2/boilerplate",
-//     buyNow: "https://hopeful-bassi-6437ef.netlify.app",
-//     obj: "item2",
-//   },
-//   {
-//     imgURL: "https://picsum.photos/300?random=3",
-//     imgALT: "Product 3",
-//     name: "My Tersimonials",
-//     techStack: "HTML/CSS",
-//     price: "123",
-//     description: "My testimonials using a slider and Glassmorphism.com",
-//     addToCart: "https://github.com/Vuyani2/boilerplate",
-//     buyNow: "https://hopeful-bassi-6437ef.netlify.app",
-//     obj: "item3",
-//   },
-//   {
-//     imgURL: "https://picsum.photos/300?random=23",
-//     imgALT: "Product 4",
-//     name: "Tempreture Convetor",
-//     techStack: "Python",
-//     price: "123",
-//     description: "Tempreture Convetor using tkinter in Python",
-//     addToCart: "https://github.com/Vuyani2/boilerplate",
-//     buyNow: "https://hopeful-bassi-6437ef.netlify.app",
-//     obj: "item4",
-//   },
-//   {
-//     imgURL: "https://picsum.photos/300?random=4",
-//     imgALT: "Product 5",
-//     name: "Mobile Shoe Store",
-//     techStack: "HTML/CSS",
-//     price: "123",
-//     description: "Mobile shoe store web site using css and HTML",
-//     addToCart: "https://github.com/Vuyani2/boilerplate",
-//     buyNow: "https://hopeful-bassi-6437ef.netlify.app",
-//     obj: "item5",
-//   },
-//   {
-//     imgURL: "https://picsum.photos/300?random=5",
-//     imgALT: "Product 6",
-//     name: "Lotto Numbers App",
-//     techStack: "Python",
-//     price: "123",
-//     description: "Using tkinter in python to genarate a lotto application",
-//     addToCart: "https://github.com/Vuyani2/boilerplate",
-//     buyNow: "https://hopeful-bassi-6437ef.netlify.app",
-//     obj: "item6",
-//   },
-//   {
-//     imgURL: "https://picsum.photos/300?random=6",
-//     imgALT: "Product 7",
-//     name: "LifeChoices Sign in System ",
-//     techStack: "Python",
-//     price: "123",
-//     description:
-//       "Using tkinter in python and mysql databases for user and admin logins for LifeChoices",
-//     addToCart: "https://github.com/Vuyani2/boilerplate",
-//     buyNow: "https://hopeful-bassi-6437ef.netlify.app",
-//     obj: "item7",
-//   },
-// ];
-// let products = [];
+let cartProducts = [];
+
 fetch("https://lit-beach-56409.herokuapp.com/sort-product/", {
   method: "GET",
 })
@@ -123,19 +44,26 @@ function createCard(card) {
 console.log(JSON.parse(localStorage.getItem("products")));
 createCard(JSON.parse(localStorage.getItem("products")));
 
-let cartProducts = [];
 function addToCart(id) {
-  let products = JSON.parse(localStorage.getItem("products"));
-  let cartProduct = products.find((product) => {
-    return product[0] == id;
-  });
-  cartProducts.push(cartProduct);
-  localStorage.productsOnCart = cartProducts;
-  //
-  // localStorage.ProductsOnCart = cartProduct;
-  let cartContainer = document.querySelector(".list-group");
-  // console.log(cartContainer);
-  cartContainer.innerHTML = `
+  fetch("https://lit-beach-56409.herokuapp.com/sort-product/", {
+    method: "GET",
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      // let products = JSON.parse(localStorage.getItem("products"));
+      let products = data.data;
+      let cartProduct = products.find((product) => {
+        return product[0] == id;
+      });
+      cartProducts.push(cartProduct);
+      localStorage.productsOnCart = cartProducts;
+      //
+      // localStorage.ProductsOnCart = cartProduct;
+      let cartContainer = document.querySelector(".list-group");
+      // console.log(cartContainer);
+      // cardContainer.innerHTML = "";
+      cartProducts.forEach((cartProduct) => {
+        cartContainer.innerHTML += `
           <li class="list-group-item">
             <div class="itm">${cartProduct[1]}</div>
             <div class="price">${cartProduct[2]}</div>
@@ -146,6 +74,16 @@ function addToCart(id) {
             </div>
           </li>
   `;
+      });
+      let totalPrice = cartProducts.reduce(
+        (total, price) => total + parseInt(price[2]),
+        0
+      );
+      document.querySelector(".calc").innerHTML = "";
+      document.querySelector(
+        ".calc"
+      ).innerHTML = `<div>TOTAL PRICE: R${totalPrice}</div>`;
+    });
 }
 
 function renderCards() {
