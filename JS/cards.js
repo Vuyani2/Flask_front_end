@@ -55,6 +55,7 @@ function addToCart(id) {
       let cartProduct = products.find((product) => {
         return product[0] == id;
       });
+
       cartProducts.push(cartProduct);
       localStorage.productsOnCart = cartProducts;
       //
@@ -110,7 +111,7 @@ function filterCards(category) {
     card.style.display = "none";
   }
 
-  let selectedCards = document.querySelectorAll(`[techStack='${category}']`);
+  let selectedCards = document.querySelectorAll(`[techStack=${product[5]}]`);
 
   for (card of selectedCards) {
     card.style.display = "block";
@@ -126,9 +127,11 @@ function showCart() {
   });
 }
 
-let profile_button = document.querySelector(".profile");
-let blog = document.querySelector("#profile");
+function showList() {
+  let profile_button = document.querySelector(".profile");
+  let blog = document.querySelector("#profile");
 
-profile_button.addEventListener("click", () => {
-  blog.classList.toggle("active");
-});
+  profile_button.addEventListener("click", () => {
+    blog.classList.toggle("active");
+  });
+}

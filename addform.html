@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <link rel="stylesheet" href="./styles/form.css" />
+  </head>
+  <body>
+    <!--form-->
+    <form id="contact-form">
+      <h1 class="contuct_heading">Contact Me</h1>
+      <!--name-->
+      <div class="contuct_info">
+        <label for="name" class="label_info">name</label>
+        <input
+          type="text"
+          name="neme"
+          required
+          placeholder="Name of product"
+          id="name"
+          class="input_info"
+        />
+      </div>
+      <!--price-->
+      <div class="contuct_info">
+        <label for="price" class="label_info">Price</label>
+        <input
+          type="text"
+          name="price"
+          required
+          placeholder="number only"
+          id="email"
+          class="input_info"
+        />
+      </div>
+
+      <!--type-->
+      <div class="contuct_info">
+        <label for="type" class="label_info">Type of product</label>
+        <input
+          type="text"
+          name="type"
+          placeholder="edit Type here"
+          id="massage"
+          class="input_info"
+        />
+      </div>
+      <!--description-->
+      <div class="contuct_info">
+        <label for="description" class="label_info">Description</label>
+        <input
+          type="text"
+          name="number"
+          required
+          placeholder="describe product"
+          id="number"
+          class="input_info"
+        />
+      </div>
+      <!-- image link -->
+      <div class="contuct_info">
+        <label for="image" class="label_info">Image Link</label>
+        <input
+          type="text"
+          name="image"
+          placeholder="edit image link here"
+          id="massage"
+          class="input_info"
+        />
+      </div>
+      <!--send button-->
+
+      <div class="contuct_info">
+        <button onclick="createNewProuct()" class="butt_link">Send</button>
+      </div>
+    </form>
+    <script src="/JS/form.js"></script>
+  </body>
+</html>
