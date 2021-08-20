@@ -1,3 +1,5 @@
+// INITIALIZING VARIABLES FOR BTNs
+
 const sign_in_btn = document.querySelector("#sign-in-btn");
 const sign_up_btn = document.querySelector("#sign-up-btn");
 const container = document.querySelector(".container");
@@ -11,6 +13,8 @@ sign_in_btn.addEventListener("click", () => {
 });
 
 let regForm = document.querySelector(".form");
+
+//SUBMIT FOR REG
 
 regForm.addEventListener("submit", (e) => {
   e.preventDefault();
