@@ -5,7 +5,8 @@ fetch("https://lit-beach-56409.herokuapp.com/sort-product/", {
   .then((data) => {
     localStorage.products = JSON.stringify(data.data);
   });
-// console.log(products);
+
+//CREATING CARD
 
 function createCard(card) {
   let cardContainer = document.querySelector(".products");
@@ -37,8 +38,9 @@ function createCard(card) {
       </div>    
       `;
   });
-  // return createdCard;
 }
+
+//ADDING TO CART
 console.log(JSON.parse(localStorage.getItem("products")));
 createCard(JSON.parse(localStorage.getItem("products")));
 
@@ -48,7 +50,6 @@ function addToCart(id) {
   })
     .then((res) => res.json())
     .then((data) => {
-      // let products = JSON.parse(localStorage.getItem("products"));
       let products = data.data;
       console.log(products);
       let cartProduct = products.find((product) => {
@@ -62,41 +63,13 @@ function addToCart(id) {
 
       localStorage.setItem("cart products", JSON.stringify(cartProducts));
       showCartItems(cartProducts);
-      // localStorage.productsOnCart = cartProducts;
-      //     //
-      //     // localStorage.ProductsOnCart = cartProduct;
-      // let cartContainer = document.querySelector(".list-group");
-      // //     // console.log(cartContainer);
-      // cartContainer.innerHTML = "";
-      // console.log(cartProducts);
-      // cartProducts.forEach((product) => {
-      //   console.log(product);
-      //   cartContainer.innerHTML += `
-      //         <li class="list-group-item">
-      //           <div class="itm">${product[1]}</div>
-      //           <div class="price">${product[2]}</div>
-      //           <div class="dlt">
-      //             <button onclick="deleteFromCart(${product[0]})" class="btn btn-danger btn-sm float-right delete">
-      //               <i class="fas fa-trash-alt"></i>
-      //             </button>
-      //           </div>
-      //         </li>
-      // `;
-      // });
-      // let totalPrice = cartProducts.reduce(
-      //   (total, price) => total + parseInt(price[2]),
-      //   0
-      // );
-      // document.querySelector(".calc").innerHTML = "";
-      // document.querySelector(
-      //   ".calc"
-      // ).innerHTML = `<div>TOTAL PRICE: R${totalPrice}</div>`;
     });
 }
 
+//SHOWING CART ITEMS AND TOTAL PRICE
+
 function showCartItems(cartProducts) {
   let cartContainer = document.querySelector(".list-group");
-  //     // console.log(cartContainer);
   cartContainer.innerHTML = "";
   console.log(cartProducts);
   cartProducts.forEach((product) => {
@@ -143,7 +116,7 @@ function renderCards(products) {
   }
 }
 
-// renderCards();
+// FILTER CARDS BY CATEGOTY(type)
 
 function filterCards(category) {
   let cards = document.getElementsByClassName("product-item");
@@ -164,6 +137,8 @@ function filterCards(category) {
   }
 }
 
+//SHOW CART
+
 function showCart() {
   let card_button = document.querySelector(".cards");
   let blob = document.querySelector("#cart");
@@ -172,6 +147,8 @@ function showCart() {
     blob.classList.toggle("active");
   });
 }
+
+// ACTIVATE LINK LIST
 
 function showList() {
   let profile_button = document.querySelector(".profile");
